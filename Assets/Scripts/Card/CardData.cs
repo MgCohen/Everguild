@@ -11,7 +11,7 @@ public class CardData
         Cost = cost;
         Attack = attack;
         Defense = defense;
-        Image = Resources.Load<Sprite>($"Cards/" + image);
+        ImagePath = image;
     }
 
     public string Name;
@@ -21,5 +21,8 @@ public class CardData
     public int Attack;
     public int Defense;
 
-    public Sprite Image;
+    public string ImagePath;
+
+    public Sprite Image => Resources.Load<Sprite>($"Cards/" + ImagePath);
+
 }
